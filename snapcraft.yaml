@@ -7,7 +7,12 @@ description: |
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
+apps:
+	zdoom-git:
+		command: zdoom
+
 parts:
-  my-part:
-    # See 'snapcraft plugins'
-    plugin: nil
+	zdoom-scr: # See 'snapcraft plugins'
+		plugin: cmake
+			source: https://github.com/rheit/zdoom.git
+			source-type: git
